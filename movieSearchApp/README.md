@@ -4,6 +4,4 @@ This project is a simple movie information retrieval APIs-based movie search app
 Tech Stack used: HTML, CCS3, JavaScript and TMDB API.
 
 
-
-
-https://github.com/Muskan9782/Projects/blob/main/movieSearchApp/homepage.png
+![homepageMovie](https://user-images.githubusercontent.com/95033451/178195515-9f9a6f55-0e22-4b76-98b1-4ca188af7e75.png)
