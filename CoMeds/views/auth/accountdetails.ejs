@@ -1,0 +1,47 @@
+<%- include('../partials/header') %>
+<link rel="stylesheet" href="../../public/css/accountdetails.css"> 
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<div class="wrapper container" >
+    <div class="left">
+        <img src="../../public/images/com.png" alt="user" width="100">
+        <h4><%= curUser.username %></h4>
+        <% if(curUser.isSeller) { %>
+            <b>(Seller)</b>
+          <% } %> 
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3> Your Account Details</h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Email</h4>
+                    <p><%= curUser.email %></p>
+                 </div>
+                 <div class="data">
+                   <h4>Phone</h4>
+                    <p><%= curUser.phone %></p>
+              </div>
+            </div>
+        </div>
+      
+      <div class="projects">
+            
+            <div class="projects_data">
+                 <div class="data">
+                    <h4>DOB</h4>
+                    <p><%= curUser.dateOfBirth.toDateString().substring(4) %></p>
+                 </div>
+                 <div class="data">
+                   <h4>Purchase History</h4>
+                   <a href="/user/purchasehistory">Click to see</a>
+                    
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
+
+

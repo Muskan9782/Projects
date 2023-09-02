@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>  
+<link rel="stylesheet" href="../../public/css/card.css"> 
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 col-md-6 col-sm-8 col-xs-10 offset-2" style="margin-top: 2%;">
+                <div class="card">
+                    <h3 class="display-10" style="text-align: center;">All Products here</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <% for(product of foundProducts){ %>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="card mb-3">
+                        <img src="<%= product.images[0] ?  product.images[0].url : '' %>" alt="Product Image"
+                            class="card-img-top" style="height: 14rem;">
+                        
+                        
+                        <div class="card-body">
+                            <div>   <b><%= product.name %></b> </div>  
+                            <p>Price : ₹ <%= product.price %> /piece</p>
+
+                            <p><span class="badge bg-info text-dark">Category - <%= product.category %></span> </p>
+                            <a href='/products/<%= product._id %>'><button class="btn btn-light">More Info</button></a>
+                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                            <a href='/products/<%= product._id %>/buy'><button class="btn btn-success">Buy Now</button></a>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
