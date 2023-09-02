@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+    <div class="container" style="margin: 30px;">
+        <div class="card text-center">
+          <div class="card-header">
+            Search by city and category
+          </div>
+          <div class="card-body">
+            <form action='/products/search' method='POST'>
+        
+              <div class="form-group row" style="margin-bottom: 20px;">
+                <label for="cityOfPresence" class="col-sm-4 col-form-label">Enter City Name</label>
+                <div class="col-sm-6">
+                  <input type="text" name="cityOfPresence" id="productName" class="form-control"" placeholder="Your City" required>
+                </div>
+              </div>
+
+              <div class="form-group row" style="margin-bottom: 20px;">
+                <label for="productName" class="col-sm-4 col-form-label">Categories</label>
+                <div class="col-sm-6">
+                  <select name="category" id="category" class="form-select">
+                    <option value='medicine'>Medicine</option>
+                    <option value='oxygen-cylinder'>Oxygen Cylinder</option>
+                    <option value='equipments'>Equipments</option>
+                </select>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success float-right add-product">Search</button> 
+            </form>
+          </div>
+        </div>
+        <ul class="list-group mt-3">
+      
+        </ul>      
+      </div>
+
+
+    <%- include('../partials/footer') %>

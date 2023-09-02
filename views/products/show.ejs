@@ -1,0 +1,65 @@
+<%- include('../partials/header') %>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10" style="margin-top: 4%;">
+                <div class="card">
+                    <h1 class="display-6" style="text-align: center;">
+                        <%= foundProduct.name %>
+                    </h1>
+                    <h5 style="text-align: center;">Supplier : <em><%= foundProduct.owner.ownerName %></em></h5>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-touch="false"
+                            data-bs-interval="false">
+                            <div class="carousel-inner">
+                                <% for(let i=0;i<foundProduct.images.length;i++) { %>
+                                    <div class="carousel-item <%= i===0 ? 'active' : '' %>">
+                                        <img src="<%= foundProduct.images[i].url %>" class="d-block w-100"
+                                            alt="Product Image">
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="card" style="margin-bottom: 80px;">
+                    <div class="card-body">
+                        <p>
+                            Description : <%= foundProduct.detail %>
+                        </p>
+                        <div style="margin-bottom: 25px; text-align: center;">
+                        <p style="display: inline;"><span class="badge bg-info text-dark">Category : <%= foundProduct.category %></span></p>
+                        &nbsp;  &nbsp;  &nbsp;
+                        <p style="display: inline;"><span class="badge bg-info text-dark">Price : ₹ <%= foundProduct.price %> /piece</span></p>
+                        &nbsp;  &nbsp;  &nbsp;
+                        <p style="display: inline;"><span class="badge bg-info text-dark">Quantity Available : <%= foundProduct.qtyAvl %></span></p>
+                        </div>
+                        <!-- &nbsp;  &nbsp;  &nbsp;  &nbsp; -->
+                        
+                        &emsp; &emsp; &emsp; &emsp;
+                      <a href='/products/<%= foundProduct._id %>/buy'><button class="btn btn-success">Buy Now</button></a>
+                      &emsp; &emsp; &emsp; &emsp; &emsp;
+                      <a href='/products'><button class="btn btn-success">Back to Products</button></a>
+                      
+
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>

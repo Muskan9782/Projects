@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+   <div class="container">
+       <div class="top-badge" style="text-align: center;">
+           <h1>Welcome to CoMeds.</h1>
+           <p>Sell your products here and help the community in need!!!</p>
+       </div>
+   </div>
+   <div class="container" style="text-align: center; margin-bottom: 10px;">
+       <a href="/products/new"><button type="button" class="btn btn-dark">Add a product</button></a>
+       <br>
+   </div>
+
+    <div class="container">
+        <!-- <h2 style="text-align: center;"> Here is a list of products added by you!!!</h2> -->
+
+        <div class="row">
+            <% seller.createdProducts.forEach(function(product) { %>
+                      <div class="col-lg-4 col-sm-12">
+                    <div class="card mb-3">
+                        <img src="<%= product.images[0] ?  product.images[0].url : '' %>" alt="Product Image"
+                            class="card-img-top" style="height: 14rem;">
+                        
+                        
+                        <div class="card-body">
+                            <div>   <b><%= product.name %></b> </div>  
+                            <p>Price : ₹ <%= product.price %> /piece</p>
+
+                             <p><span class="badge bg-info text-dark">Category - <%= product.category %></span> </p>
+                            <!--<a href='/products/<%= product._id %>'><button class="btn btn-success">More Info</button></a>
+                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+                            <a href='/products/<%= product._id %>/buy'><button class="btn btn-success">Buy Now</button></a> -->
+
+                                &ensp; &nbsp;
+                                    <a style="display: inline;" href='/products/<%= product._id %>/edit'><button class="btn btn-primary">Edit
+                                        Product</button>
+                                    </a>
+                                    &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;
+                                    <form style="display: inline;" action='/products/<%= product._id %>?_method=DELETE' method='POST'>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                             
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+<%- include('../partials/footer') %>

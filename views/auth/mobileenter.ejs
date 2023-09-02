@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+    <div class="container" style="margin: 30px;">
+        <div class="card text-center">
+          <div class="card-header">
+            To sell on CoMeds, you first need to verify your phone number
+          </div>
+          <div class="card-body">
+            <form action="/user/mobileverifyS1" method="POST">
+        
+              <div class="form-group row" style="margin-bottom: 20px;">
+                <label for="phone" class="col-sm-4 col-form-label">Enter Country Code</label>
+                <div class="col-sm-6">
+                  <input type="text" name="ccode" id="productName" class="form-control" id="productName" placeholder="+91" required>
+                </div>
+              </div>
+
+              <div class="form-group row" style="margin-bottom: 20px;">
+                <label for="productName" class="col-sm-4 col-form-label">Enter Phone number</label>
+                <div class="col-sm-6">
+                  <input type="tel" name="phone" id="productName" class="form-control" id="productName" placeholder="Enter number ">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success float-right add-product">Verify Number</button> 
+            </form>
+          </div>
+        </div>
+        <ul class="list-group mt-3">
+      
+        </ul>      
+      </div>
+      
+
+    <%- include('../partials/footer') %>
